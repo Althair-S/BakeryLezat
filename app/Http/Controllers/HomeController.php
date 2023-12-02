@@ -36,6 +36,19 @@ class HomeController extends Controller
     {
         return view('admin.adminHome');
     }
+    public function orders(): View
+    {
+        return view('admin.customers');
+    }
+    public function customers(): View
+    {
+        return view('admin.customers');
+    }
+
+    public function Products(): View
+    {
+        return view('admin.Products');
+    }
 
     /**
      * Show the application dashboard.

@@ -29,7 +29,7 @@ All Normal Users Routes List
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:user'])->group(function () {
 
-    Route::get('user.home', [HomeController::class, 'index'])->name('home');
+    Route::get('user/home', [HomeController::class, 'index'])->name('home');
 });
 
 /*------------------------------------------
@@ -39,7 +39,13 @@ All Admin Routes List
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
-    Route::get('admin.admin.home', [HomeController::class, 'adminHome'])->name('admin.home');
+    Route::get('admin', [HomeController::class, 'adminHome'])->name('admin.home');
+
+    Route::get('admin/orders', [HomeController::class, 'orders'])->name('admin.orders');
+
+    Route::get('admin/Products', [HomeController::class, 'Products'])->name('admin.Products');
+
+    Route::get('admin/customers', [HomeController::class, 'customers'])->name('admin.customers');
 });
 
 /*------------------------------------------
@@ -49,5 +55,5 @@ All Admin Routes List
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:manager'])->group(function () {
 
-    Route::get('manager.manager.home', [HomeController::class, 'managerHome'])->name('manager.home');
+    Route::get('manager/home', [HomeController::class, 'managerHome'])->name('manager.home');
 });
