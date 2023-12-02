@@ -39,13 +39,13 @@ All Admin Routes List
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
-    Route::get('admin', [HomeController::class, 'adminHome'])->name('admin.home');
+    Route::get('admin', [HomeController::class, 'adminPage'])->name('admin.home')->defaults('page', 'adminHome');
 
-    Route::get('admin/orders', [HomeController::class, 'orders'])->name('admin.orders');
+    Route::get('admin/orders', [HomeController::class, 'adminPage'])->name('admin.orders')->defaults('page', 'orders');
 
-    Route::get('admin/Products', [HomeController::class, 'Products'])->name('admin.Products');
+    Route::get('admin/products', [HomeController::class, 'adminPage'])->name('admin.Products')->defaults('page', 'Products');
 
-    Route::get('admin/customers', [HomeController::class, 'customers'])->name('admin.customers');
+    Route::get('admin/customers', [HomeController::class, 'adminPage'])->name('admin.customers')->defaults('page', 'customers');
 });
 
 /*------------------------------------------

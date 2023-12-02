@@ -32,22 +32,15 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function adminHome(): View
-    {
-        return view('admin.adminHome');
-    }
-    public function orders(): View
-    {
-        return view('admin.customers');
-    }
-    public function customers(): View
-    {
-        return view('admin.customers');
-    }
 
-    public function Products(): View
+
+    public function adminPage($page): View
     {
-        return view('admin.Products');
+        $allowedPages = ['adminHome', 'orders', 'customers', 'Products'];
+        if (!in_array($page,$allowedPages)){
+            abort(404);
+        }
+        return view("admin.$page");
     }
 
     /**
