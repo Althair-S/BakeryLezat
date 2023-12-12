@@ -6,7 +6,8 @@
 
 <link rel="dns-prefetch" href="//fonts.bunny.net">
 <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-<link rel="shortcut icon" type="image/png" href="../assets/images/logos/favicon.png" />
-<link rel="stylesheet" href="../assets/css/styles.min.css" />
+<link rel="shortcut icon" type="image/png" href="{{ asset('assets/images/logos/favicon.png')    }}" />
+<link rel="stylesheet" href="{{ asset('assets/css/styles.min.css') }}" />
+
 
 {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}

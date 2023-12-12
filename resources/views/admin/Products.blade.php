@@ -7,7 +7,8 @@
         <div class="card-body p-4">
             <h5 class="card-title fw-semibold mb-4 d-flex justify-content-between">
                 Product Management
-                <button class="btn btn-sm btn-primary">Tambah Produk</button>
+                <a href="{{ route('admin.products.create') }}" class="btn btn-sm btn-primary">Tambah Produk</a>
+
             </h5>
             <div class="table-responsive">
                 <table class="table text-nowrap mb-0 align-middle">
@@ -43,7 +44,7 @@
                             <td class="border-bottom-0"><h6 class="fw-semibold mb-0">{{ $loop->iteration }}</h6></td>
                             <td class="border-bottom-0"><h6 class="fw-semibold mb-0">{{ $product->product_id }}</h6></td>
                             <td class="border-bottom-0"><p class="mb-0 fw-normal">{{ $product->product_name }}</p></td>
-                            <td class="border-bottom-0"><h6 class="fw-semibold mb-0 fs-4">${{ $product->product_price }}</h6></td>
+                            <td class="border-bottom-0"><h6 class="fw-semibold mb-0 fs-4">Rp{{ $product->product_price }}</h6></td>
                             <td class="border-bottom-0"><h6 class="fw-semibold mb-0">{{ $product->product_quantity }}</h6></td>
                             <td class="border-bottom-0">
                                 <img src="{{ asset('path_to_image/' . $product->product_image) }}" alt="Product Image" style="max-width: 50px;">

@@ -47,12 +47,25 @@ class HomeController extends Controller
 
     public function showProducts(): View
     {
-        
+
         $products = Product::all();
 
         return view('admin.products', compact('products'));
     }
 
+    public function create()
+    {
+        return view('admin.products.create');
+    }
+
+
+    public function store(Request $request)
+    {
+        // Logika untuk menyimpan produk ke database
+        // ...
+
+        return redirect()->route('admin.products')->with('success', 'Product added successfully.');
+    }
     /**
      * Show the application dashboard.
      *
