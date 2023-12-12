@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use App\Models\Product;
+
 
 class HomeController extends Controller
 {
@@ -36,11 +38,19 @@ class HomeController extends Controller
 
     public function adminPage($page): View
     {
-        $allowedPages = ['adminHome', 'orders', 'customers', 'Products'];
+        $allowedPages = ['adminHome', 'orders', 'customers', 'products'];
         if (!in_array($page,$allowedPages)){
             abort(404);
         }
         return view("admin.$page");
+    }
+
+    public function showProducts(): View
+    {
+        
+        $products = Product::all();
+
+        return view('admin.products', compact('products'));
     }
 
     /**

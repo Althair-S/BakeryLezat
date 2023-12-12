@@ -38,30 +38,22 @@
                     </thead>
                     <tbody>
                         <!-- Table content goes here -->
+                        @foreach($products as $product)
                         <tr>
-                            <td class="border-bottom-0"><h6 class="fw-semibold mb-0">1</h6></td>
+                            <td class="border-bottom-0"><h6 class="fw-semibold mb-0">{{ $loop->iteration }}</h6></td>
+                            <td class="border-bottom-0"><h6 class="fw-semibold mb-0">{{ $product->product_id }}</h6></td>
+                            <td class="border-bottom-0"><p class="mb-0 fw-normal">{{ $product->product_name }}</p></td>
+                            <td class="border-bottom-0"><h6 class="fw-semibold mb-0 fs-4">${{ $product->product_price }}</h6></td>
+                            <td class="border-bottom-0"><h6 class="fw-semibold mb-0">{{ $product->product_quantity }}</h6></td>
                             <td class="border-bottom-0">
-                                <h6 class="fw-semibold mb-0">PROD001</h6>
+                                <img src="{{ asset('path_to_image/' . $product->product_image) }}" alt="Product Image" style="max-width: 50px;">
                             </td>
                             <td class="border-bottom-0">
-                                <p class="mb-0 fw-normal">Product A</p>
-                            </td>
-                            <td class="border-bottom-0">
-                                <h6 class="fw-semibold mb-0 fs-4">$100.00</h6>
-                            </td>
-                            <td class="border-bottom-0">
-                                <h6 class="fw-semibold mb-0">50</h6>
-                            </td>
-                            <td class="border-bottom-0">
-                                <!-- Gambar Produk -->
-                                <img src="path_to_image" alt="Product Image" style="max-width: 50px;">
-                            </td>
-                            <td class="border-bottom-0">
-                                <!-- Tombol Action -->
                                 <button class="btn btn-sm btn-primary">Edit</button>
                                 <button class="btn btn-sm btn-danger">Delete</button>
                             </td>
                         </tr>
+                        @endforeach
                         <!-- Add more rows as needed -->
                     </tbody>
                 </table>

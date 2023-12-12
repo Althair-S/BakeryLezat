@@ -45,7 +45,7 @@
                   </a>
                 </li>
                 <li class="sidebar-item">
-                  <a class="sidebar-link" href="{{ route('admin.Products') }}" aria-expanded="false">
+                  <a class="sidebar-link" href="{{ route('admin.products') }}" aria-expanded="false">
                     <span>
                       <i class="ti ti-article"></i>
                     </span>

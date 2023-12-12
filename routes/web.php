@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 
@@ -43,7 +43,11 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
     Route::get('admin/orders', [HomeController::class, 'adminPage'])->name('admin.orders')->defaults('page', 'orders');
 
-    Route::get('admin/products', [HomeController::class, 'adminPage'])->name('admin.Products')->defaults('page', 'Products');
+    Route::get('admin/products', [HomeController::class, 'showProducts'])->name('admin.products')->defaults('page', 'products');
+    // Route::get('admin/products', [ProductsController::class, 'index'])->name('admin.products');
+    // Route::get('admin/products/create', [ProductsController::class, 'create'])->name('admin.products.create');
+    // Route::post('admin/products/store', [ProductsController::class, 'store'])->name('admin.products.store');
+
 
     Route::get('admin/customers', [HomeController::class, 'adminPage'])->name('admin.customers')->defaults('page', 'customers');
 });
